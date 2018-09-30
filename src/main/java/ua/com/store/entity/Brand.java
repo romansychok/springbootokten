@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Brand {
+public class Brand  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

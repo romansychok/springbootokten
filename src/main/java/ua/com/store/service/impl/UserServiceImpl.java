@@ -7,6 +7,8 @@ import ua.com.store.dao.UserDAO;
 import ua.com.store.entity.User;
 import ua.com.store.service.UserService;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -17,5 +19,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         dao.save(user);
+    }
+
+    @Override
+    public void delete(User user) {
+        dao.delete(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return dao.findAll();
+    }
+
+    @Override
+    public User findOne(int id) {
+        return null;
     }
 }
