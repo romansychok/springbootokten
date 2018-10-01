@@ -11,7 +11,7 @@ public interface BrandService {
     void delete(Brand brand);
     List<Brand> findAll();
 
-//    Brand findOne(int id);
+    Brand findOne(int id);
 
 
 

@@ -33,8 +33,8 @@ public class BrandServiceImpl implements BrandService {
     }
 
 
-//    @Override
-//    public Brand findOne(int id) {
-//        return dao.findOne(id);
-//    }
+    @Override
+    public Brand findOne(int id) {
+      return null;
+    }
 }

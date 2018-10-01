@@ -1,0 +1,188 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 60px;
+}
+
+.header{
+    width: 100%;
+    height: 105px;
+    background-color: lightslategrey;
+
+}
+
+.contacts{
+    background: lime;
+    /*width: 25px;*/
+    /*height: 25px;*/
+}
+
+.logotype {
+    display: block;
+    margin-left: 200px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.custom-container {
+    width: auto;
+    max-width: 680px;
+    padding:  15px;
+}
+.custom-container .text-muted {
+    margin: 20px 0;
+}
+
+.title_position {
+    text-align: center;
+    font-size: xx-large;
+}
+.menu-size{
+    font-size: 20px;
+}
+
+.contact{
+    text-align: left;
+    width: 0px;
+    height: 0px;
+    margin-bottom: 0px;
+
+}
+
+.contact2{
+    text-align: left;
+    width: 0px;
+    height: 0px;
+    margin-bottom: 0px;
+    padding-left: 120px;
+
+}
+
+.access{
+    font-weight: bold;
+
+
+
+}
+
+.registrationAccess{
+    margin-left: 950px;
+    padding-right: 8px;
+}
+
+.production_Page{
+    margin-left: 22px;
+    font-size: 22px;
+}
+
+.indexPage{
+    margin-left: 970px;
+    padding-top: 70px;
+    font-size: 25px;
+    color: red;
+}
+
+.showProducts{
+    margin-left: 220px;
+    font-size: 22px;
+}
+
+.showUsers{
+    font-size: 22px;
+    margin-left: 12px;
+}
+
+.showCategories{
+    font-size: 22px;
+    margin-left: 12px;
+}
+
+.registration{
+    font-size: 22px;
+    margin-right: 12px;
+    float: right;
+}
+
+.userPhoto{
+    width: 250px;
+    height: 250px;
+}
+
+.userName{
+    font-size: 27px;
+}
+
+.productImage{
+    margin-left: 20px;
+    width: 111px;
+    height: 111px;
+}
+
+.userNameForm{
+   margin-left: 72px;
+}
+
+.userEmailForm{
+    margin-left: 72px;
+}
+
+.userPasswordForm{
+  margin-left: 43px;
+}
+
+.menu{
+    background-color: #28a4c9;
+    overflow: hidden;
+    margin-left: 47px;
+    margin-right: 47px;
+}
+
+.menu a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 31px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu a:hover{
+    background-color: #23527c;
+    color: silver;
+}
+
+.menu a.active{
+    background-color: blue;
+    color: white;
+}
+
+
+.boxIndex{
+    width: 1160px;
+    height: 3055px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.left{
+    width: 235px;
+    height: 500px;
+    background-color: khaki;
+}
+
+.right{
+    margin-left: 1000px;
+    width: 206px;
+    height: 500px;
+    background-color: darkkhaki;
+}

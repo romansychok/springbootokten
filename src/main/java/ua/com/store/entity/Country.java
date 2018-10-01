@@ -24,7 +24,7 @@ public class Country {
     private String countryName;
 
     @OneToMany(mappedBy = "country")
-    private Set<Brand> brands = new HashSet<>();
+    private Set<Brand> brands = new HashSet<Brand>();
 
 
 }
