@@ -9,35 +9,34 @@ import ua.com.store.entity.User;
 import ua.com.store.service.UserService;
 
 @Controller
-public class MainController {
+public class UserController {
 
     @Autowired
     private UserService userService;
 
-
     @GetMapping("/")
     public String index(){
-        return "index";
+        return "/mainView/index";
     }
 
     @GetMapping("/admin")
     public String admin(){
-        return "/admin";
+        return "/adminView/admin";
     }
 
     @GetMapping("/user")
     public String user(){
-        return "/user";
+        return "/userView/user";
     }
 
     @GetMapping("/login")
     public String login(){
-        return "/login";
+        return "/userView/login";
     }
 
     @GetMapping("/register")
     public String register(){
-        return "/register";
+        return "/userView/register";
     }
 
     @PostMapping("/save")
@@ -47,6 +46,5 @@ public class MainController {
         return "redirect:/";
 
     }
-
 
 }

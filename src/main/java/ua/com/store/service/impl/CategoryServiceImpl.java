@@ -8,6 +8,7 @@ import ua.com.store.entity.Category;
 import ua.com.store.service.CategoryService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -32,7 +33,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category findOne(int id) {
-        return null;
+    public Optional<Category> findOne(int id) {
+        return dao.findById(id);
     }
 }

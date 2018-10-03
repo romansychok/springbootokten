@@ -9,6 +9,7 @@ import ua.com.store.entity.Product;
 import ua.com.store.service.ProductService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -33,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findOne(int id) {
-        return null;
+    public Optional<Product> findOne(int id) {
+        return dao.findById(id);
     }
 }

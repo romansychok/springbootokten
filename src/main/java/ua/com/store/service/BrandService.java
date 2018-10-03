@@ -4,6 +4,7 @@ package ua.com.store.service;
 import ua.com.store.entity.Brand;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BrandService {
 
@@ -11,7 +12,7 @@ public interface BrandService {
     void delete(Brand brand);
     List<Brand> findAll();
 
-    Brand findOne(int id);
+    Optional<Brand> findOne(int id);
 
 
 

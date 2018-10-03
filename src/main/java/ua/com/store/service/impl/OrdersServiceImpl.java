@@ -9,6 +9,7 @@ import ua.com.store.entity.Orders;
 import ua.com.store.service.OrdersService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -33,7 +34,7 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
-    public Orders findOne(int id) {
-        return null;
+    public Optional<Orders> findOne(int id) {
+        return dao.findById(id);
     }
 }

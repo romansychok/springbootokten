@@ -8,6 +8,7 @@ import ua.com.store.entity.Brand;
 import ua.com.store.service.BrandService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -34,7 +35,7 @@ public class BrandServiceImpl implements BrandService {
 
 
     @Override
-    public Brand findOne(int id) {
-      return null;
+    public Optional<Brand> findOne(int id) {
+      return dao.findById(id);
     }
 }

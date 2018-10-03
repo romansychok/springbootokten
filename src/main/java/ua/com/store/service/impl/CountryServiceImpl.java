@@ -2,16 +2,15 @@ package ua.com.store.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ua.com.store.dao.CountryDAO;
 import ua.com.store.entity.Country;
 import ua.com.store.service.CountryService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-@Transactional
-public class CountryServiceImpl implements CountryService {
+public class CountryServiceImpl implements CountryService{
 
    @Autowired
    private CountryDAO dao;
@@ -32,8 +31,8 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public Country findOne(int id) {
-        return null;
+    public Optional<Country> findOne(int id) {
+        return dao.findById(id);
     }
 
     @Override

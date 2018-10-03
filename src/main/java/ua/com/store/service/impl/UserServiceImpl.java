@@ -8,6 +8,7 @@ import ua.com.store.entity.User;
 import ua.com.store.service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -32,7 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findOne(int id) {
-        return null;
+    public Optional<User> findOne(int id) {
+        return dao.findById(id);
     }
 }
