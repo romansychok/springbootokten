@@ -7,9 +7,10 @@
 <body>
 Register
 
-<form th:action="@{/save}" method="post">
+<form th:action="@{/save}" method="post" enctype="multipart/form-data">
     <input type="text" name="username" placeholder="username register"/>
     <input type="text" name="password" placeholder="password register"/>
+    <input type="file" name="userImageX"/>
     <input type="submit" value="save"/>
 </form>
 
