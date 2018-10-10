@@ -33,7 +33,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<User> findOne(int id) {
-        return dao.findById(id);
+    public User findOne(int id) {
+        return dao.findOne(id);
     }
+
+
 }

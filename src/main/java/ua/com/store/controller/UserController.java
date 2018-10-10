@@ -74,17 +74,19 @@ public class UserController {
         return "/userView/register";
     }
 
-    @GetMapping("users")
+    @GetMapping("/users")
     public String users(Model model){
         model.addAttribute("users",userService.findAll());
+        System.out.println("2222");
         return "/userView/users";
     }
 
     @GetMapping("/user-{id}")
-    public String user(Model model,@PathVariable("id")int id){
-        Optional<User> one = userService.findOne(id);
+    public String user(@PathVariable("id") int id,Model model){
+        System.out.println("1111");
+        User one = userService.findOne(id);
         model.addAttribute("user",one);
-        return "/userView/user";
+        return "userView/user";
     }
 
 

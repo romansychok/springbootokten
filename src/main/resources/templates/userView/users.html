@@ -7,7 +7,7 @@
 <body>
 
 <th:block th:each="user:${users}">
-    <a th:href="@{/user}"><p th:text="${user.username}"></p></a>
+    <a th:href="@{user(id=${user.id})}"><p th:text="${user.username}"></p></a>
 </th:block>
 </body>
 </html>

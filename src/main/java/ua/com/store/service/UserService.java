@@ -10,6 +10,6 @@ public interface UserService {
     void save(User user);
     void delete(User user);
     List<User> findAll();
-    Optional<User> findOne(int id);
+    User findOne(int id);
 
 }
