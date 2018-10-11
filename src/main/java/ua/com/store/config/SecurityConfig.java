@@ -25,9 +25,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     @Bean
+    public UserDetailsService userDetailsService() {
+        return super.userDetailsService();
+    }
+
+
+    @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+
 
 
     @Bean
@@ -50,7 +58,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .withUser("aa").password("{noop}aa").roles("ADMIN");
         inMemoryConfigure()
                 .withUser("aa")
-                .password("aa")
+                .password("{noop}aa")
+                .roles("ADMIN")
                 .and()
                 .configure(builder);
         builder.authenticationProvider(provider);

@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
 
+ProductAdmin
+
+<form th:action="@{/saveProduct}" method="post" enctype="multipart/form-data">
+    <input type="text" name="productName" placeholder="productName"/>
+    <input type="text" name="nameOfBrand" placeholder="nameOfBrand"/>
+    <input type="text" name="description" placeholder="description"/>
+    <input type="number" name="price" placeholder="price"/>
+    <input type="number" name="quantity" placeholder="quantity"/>
+    <input type="file" name="pathImage"/>
+    <input type="submit" value="save"/>
+</form>
 </body>
 </html>

@@ -10,7 +10,8 @@ public interface ProductService {
     void save(Product product);
     void delete(Product product);
     List<Product> findAll();
-    Optional<Product> findOne(int id);
+
+    Product findOne(int id);
 
 
 

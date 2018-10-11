@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Brand  {
+public class Brand extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,9 @@ public class Brand  {
     private Set<Product> products = new HashSet<Product>();
 
 
+    public Brand(String nameOfBrand) {
+        this.nameOfBrand = nameOfBrand;
+    }
 
     public Brand(String nameOfBrand, String brandImage) {
         this.nameOfBrand = nameOfBrand;

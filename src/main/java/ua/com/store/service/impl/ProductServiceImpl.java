@@ -34,10 +34,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> findOne(int id) {
-        return dao.findById(id);
+    public Product findOne(int id) {
+        return dao.findOne(id);
     }
-
 
 
 }

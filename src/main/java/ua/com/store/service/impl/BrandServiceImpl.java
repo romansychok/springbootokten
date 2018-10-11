@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.store.dao.BrandDAO;
 import ua.com.store.entity.Brand;
+import ua.com.store.entity.User;
 import ua.com.store.service.BrandService;
 
 import java.util.List;
@@ -33,9 +34,10 @@ public class BrandServiceImpl implements BrandService {
         return dao.findAll();
     }
 
-
     @Override
-    public Optional<Brand> findOne(int id) {
-      return dao.findById(id);
+    public Brand findOne(int id) {
+        return dao.findOne(id);
     }
+
+
 }
