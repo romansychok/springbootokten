@@ -67,7 +67,6 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("1111");
         user.setUserImage("\\images\\" + multipartFile.getOriginalFilename());
         userService.save(user);
 
@@ -77,13 +76,11 @@ public class UserController {
     @GetMapping("/users")
     public String users(Model model){
         model.addAttribute("users",userService.findAll());
-        System.out.println("2222");
         return "/userView/users";
     }
 
     @GetMapping("/user-{id}")
     public String user(@PathVariable("id") int id,Model model){
-        System.out.println("1111");
         User one = userService.findOne(id);
         model.addAttribute("user",one);
         return "userView/user";

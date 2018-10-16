@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.store.entity.Product;
 import ua.com.store.service.ProductService;
@@ -27,6 +24,12 @@ public class ProductController {
         return "/adminView/productAdmin";
     }
 
+    @GetMapping("/productPage")
+    public String productPage(){
+        return "/productView/productPage";
+    }
+
+
     @PostMapping("/saveProduct")
     public String save(@ModelAttribute("eProduct")  Product product, BindingResult result,
                        @RequestParam("pathImage") MultipartFile multipartFile ){
@@ -42,6 +45,18 @@ public class ProductController {
         return "/mainView/index";
     }
 
+    @GetMapping("/products")
+    public String products(Model model){
+        model.addAttribute("products",productService.findAll());
+        System.out.println("1111");
+        return "/productView/products";
+    }
 
+    @GetMapping("/productPage-{id}")
+    public String productPage(@PathVariable("id") int id, Model model){
+        Product product = productService.findOne(id);
+        model.addAttribute("product",product);
+        return "/productView/productPage";
+    }
 
 }
