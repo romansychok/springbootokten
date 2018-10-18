@@ -8,10 +8,10 @@
     <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css}"/>
 </head>
 <body>
-
 <th:block th:each="product:${products}" >
     <a th:href="@{productPage(id=${product.id})}"><p th:text="${product.productName}"></p></a>
     <img th:class="productImage" th:src="${product.pathImage}"/>
+    <br/>
 </th:block>
 
 </body>

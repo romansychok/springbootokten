@@ -31,11 +31,6 @@ public class CountryServiceImpl implements CountryService{
     }
 
     @Override
-    public Optional<Country> findOne(int id) {
-        return dao.findById(id);
-    }
-
-    @Override
     public Country findByCountryName(String name) {
         return dao.findByCountryName(name);
     }

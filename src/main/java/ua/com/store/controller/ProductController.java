@@ -24,9 +24,10 @@ public class ProductController {
         return "/adminView/productAdmin";
     }
 
+
     @GetMapping("/productPage")
     public String productPage(){
-        return "/productView/productPage";
+        return "productView/productPage";
     }
 
 
@@ -48,15 +49,16 @@ public class ProductController {
     @GetMapping("/products")
     public String products(Model model){
         model.addAttribute("products",productService.findAll());
-        System.out.println("1111");
         return "/productView/products";
     }
 
-    @GetMapping("/productPage-{id}")
+    @GetMapping("/product-{id}")
     public String productPage(@PathVariable("id") int id, Model model){
         Product product = productService.findOne(id);
         model.addAttribute("product",product);
         return "/productView/productPage";
     }
+
+
 
 }

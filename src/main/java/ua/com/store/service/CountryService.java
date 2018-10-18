@@ -10,7 +10,6 @@ public interface CountryService {
     void save(Country country);
     void delete(Country country);
     List<Country> findAll();
-    Optional<Country> findOne(int id);
     Country findByCountryName(String name);
 
 

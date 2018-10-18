@@ -10,4 +10,6 @@ public interface CountryDAO extends JpaRepository<Country, Integer> {
     @Query("from Country c where c.countryName=:name")
     Country findByCountryName(@Param("name") String name);
 
+
+
 }
