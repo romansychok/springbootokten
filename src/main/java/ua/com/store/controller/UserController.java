@@ -79,7 +79,7 @@ public class UserController {
         return "/userView/users";
     }
 
-    @GetMapping("/user-{id}")
+    @GetMapping("/user/{id}")
     public String user(@PathVariable("id") int id,Model model){
         User one = userService.findOne(id);
         model.addAttribute("user",one);

@@ -6,10 +6,11 @@
 </head>
 <body>
 
-<form th:action="saveCountry" th:method="post">
-    <input type="text" placeholder="country name"/>
+<form th:action="@{/saveCountry}" th:method="post">
+    <input type="text" name="countryName" placeholder="Country Name"/>
     <input type="submit" value="save"/>
 </form>
+
 
 
 </body>

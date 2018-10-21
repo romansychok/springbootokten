@@ -9,7 +9,8 @@
 </head>
 <body>
 <th:block th:each="product:${products}" >
-    <a th:href="@{productPage(id=${product.id})}"><p th:text="${product.productName}"></p></a>
+    <!--<a th:href="@{/productPage-{id}(id=${product.id})}" th:text="${product.productName}" />-->
+    <a th:href="@{'productPage/'+${product.id}}"> <p th:text="${product.productName}"/></a>
     <img th:class="productImage" th:src="${product.pathImage}"/>
     <br/>
 </th:block>
