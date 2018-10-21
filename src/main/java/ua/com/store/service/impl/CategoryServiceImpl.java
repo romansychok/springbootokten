@@ -36,4 +36,9 @@ public class CategoryServiceImpl implements CategoryService {
     public Optional<Category> findOne(int id) {
         return dao.findById(id);
     }
+
+    @Override
+    public Category findByCategoryName(String categoryName) {
+        return dao.findByCategoryName(categoryName);
+    }
 }

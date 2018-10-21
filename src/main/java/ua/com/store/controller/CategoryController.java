@@ -44,11 +44,11 @@ public class CategoryController {
     }
 
 
-//
-//    @InitBinder
-//    public void bind(WebDataBinder binder){
-//        binder.addValidators(categoryValidator);
-//    }
+
+    @InitBinder
+    public void bind(WebDataBinder binder){
+        binder.addValidators(categoryValidator);
+    }
 
 
 }

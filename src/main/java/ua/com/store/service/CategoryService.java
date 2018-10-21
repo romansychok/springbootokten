@@ -11,5 +11,6 @@ public interface CategoryService {
     void delete(Category category);
     List<Category> findAll();
     Optional<Category> findOne(int id);
+    Category findByCategoryName(String categoryName);
 
 }

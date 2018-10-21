@@ -53,7 +53,7 @@ public class ProductController {
         return "/productView/products";
     }
 
-    @GetMapping("/productPage/{id}")
+    @GetMapping("/product/{id}")
     public String productPage(@PathVariable("id") int id, Model model){
         Product product = productService.findOne(id);
         model.addAttribute("product",product);

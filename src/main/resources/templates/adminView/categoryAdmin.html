@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<form th:action="@{/saveCategory}" th:method="post">
-    <input type="text" name="countryName" placeholder="Country Name"/>
-    <p th:if="${#fields.hasErrors('countryName')}" th:errors="*{countryName}"/>
+<form th:action="@{/saveCategory}" th:method="post" th:object="${eCategory}">
+    <input type="text" name="categoryOfProduct" placeholder="Category"/>
+    <p th:if="${#fields.hasErrors('categoryOfProduct')}" th:errors="*{categoryOfProduct}"/>
     <input type="submit" value="save"/>
 </form>
 
