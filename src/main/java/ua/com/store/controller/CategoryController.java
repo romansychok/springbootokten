@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ua.com.store.entity.Category;
 import ua.com.store.service.CategoryService;
 import ua.com.store.validation.CategoryValidator;
@@ -30,6 +27,7 @@ public class CategoryController {
     @GetMapping("/categoryAdmin")
     public String next(Model model){
         model.addAttribute("eCategory", new Category());
+        model.addAttribute("categories",categoryService.findAll());
         return "/adminView/categoryAdmin";
     }
 
@@ -41,6 +39,18 @@ public class CategoryController {
         }
         categoryService.save(category);
         return "/adminView/categoryAdmin";
+    }
+
+    @GetMapping("/deleteCategory/{id}")
+    public String deleteCategory(@PathVariable int id){
+        categoryService.delete(id);
+        return "/mainView/index";
+    }
+
+    @GetMapping("/category/{id}")
+    public String categoryInfoPage(@PathVariable("id") int id, Model model){
+        model.addAttribute("category",categoryService.findOne(id));
+        return "/categoryView/categoryPage";
     }
 
 

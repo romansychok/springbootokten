@@ -10,6 +10,7 @@
 <body>
 <th:block th:each="product:${products}" >
     <a th:href="@{'product/'+${product.id}}"> <p th:text="${product.productName}"/></a>
+    <a th:href="@{'productDelete/'+${product.id}}">Delete</a>
     <img th:class="productImage" th:src="${product.pathImage}"/>
     <br/>
 </th:block>

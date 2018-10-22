@@ -60,5 +60,11 @@ public class ProductController {
         return "/productView/productPage";
     }
 
+    @GetMapping("/productDelete/{id}")
+    public String deletingCurrentProduct(@PathVariable int id){
+        productService.delete(id);
+        return "/mainView/index";
+    }
+
 
 }

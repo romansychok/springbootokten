@@ -8,9 +8,10 @@ import java.util.Optional;
 public interface CountryService {
 
     void save(Country country);
-    void delete(Country country);
+    void delete(int id);
     List<Country> findAll();
     Country findByCountryName(String name);
+    Country findOne(int id);
 
 
 }

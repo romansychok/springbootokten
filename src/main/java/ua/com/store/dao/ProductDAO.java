@@ -11,4 +11,5 @@ public interface ProductDAO extends JpaRepository<Product, Integer> {
     @Query("from Product p where p.id=:id")
     Product findOne(@Param("id") int id);
 
+
 }

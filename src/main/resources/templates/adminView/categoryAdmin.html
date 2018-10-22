@@ -10,6 +10,14 @@
     <input type="text" name="categoryOfProduct" placeholder="Category"/>
     <p th:if="${#fields.hasErrors('categoryOfProduct')}" th:errors="*{categoryOfProduct}"/>
     <input type="submit" value="save"/>
+    <br/>
+    <br/>
+    <br/>
+    <th:block th:each="category:${categories}">
+        <a th:href="@{'category/'+${category.id}}"><p th:text="${category.categoryOfProduct}"/></a>
+        <a th:href="@{'deleteCategory/'+${category.id}}">Delete</a>
+        <br/>
+    </th:block>
 </form>
 
 

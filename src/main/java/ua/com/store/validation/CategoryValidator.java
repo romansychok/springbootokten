@@ -19,8 +19,9 @@ public class CategoryValidator implements Validator {
     }
 
     @Override
-    public void validate(Object o, Errors errors) {
-        Category category = (Category) o;
+    public void validate(Object target, Errors errors) {
+        Category category = (Category) target
+                ;
         if (category.getCategoryOfProduct().isEmpty()){
             errors.rejectValue("categoryOfProduct","","field is Empty");
         }

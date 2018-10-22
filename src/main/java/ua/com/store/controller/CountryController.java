@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ua.com.store.entity.Country;
 import ua.com.store.service.CountryService;
 import ua.com.store.validation.CountryValidator;
@@ -33,6 +30,12 @@ public class CountryController {
 
     }
 
+    @GetMapping("/country/{id}")
+    public String pageWhereCanSeeCountryOfOriginProduct(@PathVariable("id") int id, Model model){
+        model.addAttribute("country",countryService.findOne(id));
+        return "/countryView/CountryPage";
+    }
+
     @PostMapping("/saveCountry")
     public String save(@ModelAttribute("eCountry") @Valid Country country, BindingResult result){
         if (result.hasErrors()) {
@@ -43,6 +46,12 @@ public class CountryController {
         return "/adminView/countryAdmin";
     }
 
+
+    @GetMapping("/deleteCountry/{id}")
+    public String deleteCountry(@PathVariable int id){
+        countryService.delete(id);
+        return "/mainView/index";
+    }
 
 
     @InitBinder
