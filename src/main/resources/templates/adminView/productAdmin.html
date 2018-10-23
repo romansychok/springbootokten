@@ -8,12 +8,13 @@
 
 ProductAdmin
 
-<form th:action="@{/saveProduct}" method="post" enctype="multipart/form-data">
-    <input type="text" name="productName" placeholder="productName"/>
-    <input type="text" name="nameOfBrand" placeholder="nameOfBrand"/>
-    <input type="text" name="description" placeholder="description"/>
-    <input type="number" name="price" placeholder="price"/>
-    <input type="number" name="quantity" placeholder="quantity"/>
+<form th:action="@{/saveProduct}"  th:object="${eProduct}" method="post" enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}"/>
+    <input type="text" th:field="*{productName}" placeholder="productName"/>
+    <input type="text" th:field="*{nameOfBrand}" placeholder="nameOfBrand"/>
+    <input type="text" th:field="*{description}" placeholder="description"/>
+    <input type="number" th:field="*{price}" placeholder="price"/>
+    <input type="number" th:field="*{quantity}" placeholder="quantity"/>
     <input type="file" name="pathImage"/>
     <input type="submit" value="save"/>
 </form>

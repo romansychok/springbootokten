@@ -74,13 +74,13 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public String users(Model model){
+    public String seeAllUsers(Model model){
         model.addAttribute("users",userService.findAll());
         return "/userView/users";
     }
 
     @GetMapping("/user/{id}")
-    public String user(@PathVariable("id") int id,Model model){
+    public String userPage(@PathVariable("id") int id,Model model){
         User one = userService.findOne(id);
         model.addAttribute("user",one);
         return "userView/user";

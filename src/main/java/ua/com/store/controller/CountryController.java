@@ -30,6 +30,12 @@ public class CountryController {
 
     }
 
+//    @GetMapping("/countries")
+//    public String seeAllCountries(Model model){
+//        model.addAttribute("countries",countryService.findAll());
+//        return "/countryView/countries";
+//    }
+
     @GetMapping("/country/{id}")
     public String pageWhereCanSeeCountryOfOriginProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("country",countryService.findOne(id));
@@ -37,7 +43,7 @@ public class CountryController {
     }
 
     @PostMapping("/saveCountry")
-    public String save(@ModelAttribute("eCountry") @Valid Country country, BindingResult result){
+    public String saveCountry(@ModelAttribute("eCountry") @Valid Country country, BindingResult result){
         if (result.hasErrors()) {
             System.out.println("Country class has error");
             return "/adminView/countryAdmin";
@@ -53,6 +59,11 @@ public class CountryController {
         return "/mainView/index";
     }
 
+    @GetMapping("/updateCountry/{id}")
+    public String updateCountry(@PathVariable("id") int id, Model model){
+        model.addAttribute("eCountry",countryService.findOne(id));
+        return "/adminView/countryAdmin";
+    }
 
     @InitBinder
     public void bind(WebDataBinder binder){

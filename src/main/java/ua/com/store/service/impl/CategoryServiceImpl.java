@@ -33,8 +33,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Optional<Category> findOne(int id) {
-        return dao.findById(id);
+    public Category findOne(int id) {
+        return dao.findById(id).orElse(null);
     }
 
     @Override

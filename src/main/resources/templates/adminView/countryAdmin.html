@@ -7,7 +7,8 @@
 <body>
 
 <form th:action="@{/saveCountry}" th:method="post" th:object="${eCountry}">
-    <input type="text" name="countryName" placeholder="Country Name"/>
+    <input type="hidden" th:field="*{id}"/>
+    <input type="text" th:field="*{countryName}"/>
     <p th:if="${#fields.hasErrors('countryName')}" th:errors="*{countryName}" />
     <input type="submit" value="save"/>
     <br/>
@@ -16,6 +17,7 @@
     <th:block th:each="country:${countries}">
         <a th:href="@{'country/'+${country.id}}"><p th:text="${country.countryName}"/></a>
         <a th:href="@{'deleteCountry/'+${country.id}}">Delete</a>
+        <a th:href="@{'updateCountry/'+${country.id}}">Update</a>
         <br/>
         <br/>
     </th:block>

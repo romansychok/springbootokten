@@ -18,21 +18,21 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("productAdmin")
+    @GetMapping("/productAdmin")
     public String next(Model model){
         model.addAttribute("eProduct",new Product());
         return "/adminView/productAdmin";
     }
 
 
-//    @GetMapping("/productPage")
-//    public String productPage(){
-//        return "productView/productPage";
-//    }
+    @GetMapping("/productPage")
+    public String productPage(){
+        return "productView/productPage";
+    }
 
 
     @PostMapping("/saveProduct")
-    public String save(@ModelAttribute("eProduct")  Product product, BindingResult result,
+    public String saveProduct(@ModelAttribute("eProduct")  Product product, BindingResult result,
                        @RequestParam("pathImage") MultipartFile multipartFile ){
         String path = System.getProperty("user.home") + File.separator + "projectImages\\";
 
@@ -47,14 +47,14 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public String products(Model model){
+    public String seeAllProductsIntoAList(Model model){
         model.addAttribute("products",productService.findAll());
         System.out.println(ProductController.class.getName() + " products line 52");
         return "/productView/products";
     }
 
     @GetMapping("/product/{id}")
-    public String productPage(@PathVariable("id") int id, Model model){
+    public String goToTheProductPageToSeeDescriptionOfProduct(@PathVariable("id") int id, Model model){
         Product product = productService.findOne(id);
         model.addAttribute("product",product);
         return "/productView/productPage";
@@ -64,6 +64,12 @@ public class ProductController {
     public String deletingCurrentProduct(@PathVariable int id){
         productService.delete(id);
         return "/mainView/index";
+    }
+
+    @GetMapping("/productEdit/{id}")
+    public String productEdit(@PathVariable("id") int id, Model model){
+        model.addAttribute("eProduct",productService.findOne(id));
+        return "/adminView/productAdmin";
     }
 
 

@@ -48,11 +48,16 @@ public class CategoryController {
     }
 
     @GetMapping("/category/{id}")
-    public String categoryInfoPage(@PathVariable("id") int id, Model model){
+    public String goToCategoryPageToSeeCurrentProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("category",categoryService.findOne(id));
         return "/categoryView/categoryPage";
     }
 
+    @GetMapping("/updateCategory/{id}")
+    public String updateCategory(@PathVariable("id") int id, Model model){
+        model.addAttribute("eCategory",categoryService.findOne(id));
+        return "/adminView/categoryAdmin";
+    }
 
 
     @InitBinder

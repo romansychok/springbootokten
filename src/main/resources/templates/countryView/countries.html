@@ -6,6 +6,13 @@
 </head>
 <body>
 
+<th:block th:each="country:${countries}">
+    <a th:href="@{'country/'+${country.id}}"><p th:text="${country.countryName}"/></a>
+    <a th:href="@{'deleteCountry/'+${country.id}}">Delete</a>
+    <a th:href="@{'updateCountry/'+${country.id}}">Update</a>
+    <br/>
+    <br/>
+</th:block>
 
 </body>
 </html>
