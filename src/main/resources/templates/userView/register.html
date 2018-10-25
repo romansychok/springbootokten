@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layouts/header::header">
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
-Register
+
+
 
 <form th:action="@{/save}" method="post" enctype="multipart/form-data">
-    <input type="text" name="username" placeholder="username register"/>
-    <input type="text" name="password" placeholder="password register"/>
+    <input  type="text" name="username" placeholder="username register"/>
+    <br/>
+    <input  type="text" name="password" placeholder="password register"/>
+    <br/>
     <input type="file" name="userImageX"/>
+    <br/>
     <input type="submit" value="save"/>
 </form>
 
+
+
+
+<div th:replace="layouts/footer::footer"/>
 </body>
 </html>

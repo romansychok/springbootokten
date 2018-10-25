@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head>
-    <link href="../../static/style.css" th:href="@{/style.css}" rel="stylesheet" />
-    <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" th:href="@{//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css}"/>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" layout:decorator="layouts/main"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/header::header">
+
+
 </head>
 <body>
 Index
 <br/>
-
+<div>
+<br/>
 <div th:class="boxIndex">
     <div th:class="access">
         <p th:class="contact">+380954202454</p>
@@ -18,14 +17,22 @@ Index
         <a th:class="registrationAccess" th:href="@{/register}">Registration</a>
         <a th:href="@{/login}">Authorization</a>
     </div>
+    <br/>
+    <div th:class="menu">
+    <a th:class="active" th:href="@{/products}">products</a>
+    <a th:href="@{/users}">users</a>
+    <a th:href="@{/categories}">categories</a>
+    <a th:href="@{/login}">login</a>
+    <a th:href="@{/categoryAdmin}">Category</a>
+    <a th:href="@{/productAdmin}">product</a>
+    </div>
 </div>
 
 
 
 
 
-</div>
 
-
+<div th:replace="layouts/footer::footer"/>
 </body>
 </html>

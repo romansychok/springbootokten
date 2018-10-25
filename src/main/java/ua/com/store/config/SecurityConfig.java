@@ -18,7 +18,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan("ua.com.store.*")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -59,7 +58,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         inMemoryConfigure()
                 .withUser("aa")
                 .password("{noop}aa")
-                .roles("ADMIN")
+                .authorities("ADMIN")
+                .and()
+                .withUser("user")
+                .password("{noop}password")// problem with users password, can't enter by user
+                .authorities("USER")
                 .and()
                 .configure(builder);
         builder.authenticationProvider(provider);
