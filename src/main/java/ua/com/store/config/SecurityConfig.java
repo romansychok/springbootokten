@@ -61,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorities("ADMIN")
                 .and()
                 .withUser("user")
-                .password("{noop}password")// problem with users password, can't enter by user
+                .password("{noop}password")
                 .authorities("USER")
                 .and()
                 .configure(builder);

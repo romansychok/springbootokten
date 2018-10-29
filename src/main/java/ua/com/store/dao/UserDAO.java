@@ -8,6 +8,10 @@ import ua.com.store.entity.User;
 
 public interface UserDAO extends JpaRepository<User,Integer>{
 
+    @Query("from User u where u.username=:name")
+    User findByUserName(@Param("name") String name);
+
+
     @Query("from User u where u.id=:id")
     User findOne(@Param("id") int id);
 
