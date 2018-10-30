@@ -6,18 +6,23 @@
 
 </head>
 <body>
-Index
-<br/>
-<div>
-<br/>
 <div th:class="boxIndex">
+<div>
+    <div>
     <div th:class="access">
         <p th:class="contact">+380954202454</p>
         <p th:class="contact2">romansychok@gmail.com</p>
         <a th:class="registrationAccess" th:href="@{/register}">Registration</a>
         <a th:href="@{/login}">Authorization</a>
+        </div>
     </div>
-    <br/>
+
+
+
+        <img th:class="picture" th:src="@{picture/productsPicture.jpg}" />
+
+
+
     <div th:class="menu">
     <a th:class="active" th:href="@{/products}">products</a>
     <a th:href="@{/users}">users</a>
@@ -26,13 +31,9 @@ Index
     <a th:href="@{/categoryAdmin}">Category</a>
     <a th:href="@{/productAdmin}">product</a>
     </div>
+
+
 </div>
-
-
-
-
-
-
 <div th:replace="layouts/footer::footer"/>
 </body>
 </html>
