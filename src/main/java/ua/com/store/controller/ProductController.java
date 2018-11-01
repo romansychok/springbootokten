@@ -7,6 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.store.entity.Product;
+import ua.com.store.service.CategoryService;
+import ua.com.store.service.OrdersService;
 import ua.com.store.service.ProductService;
 
 import java.io.File;
@@ -17,6 +19,9 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     @GetMapping("/productAdmin")
     public String next(Model model){
@@ -33,7 +38,7 @@ public class ProductController {
 
     @PostMapping("/saveProduct")
     public String saveProduct(@ModelAttribute("eProduct")  Product product, BindingResult result,
-                       @RequestParam("pathImage") MultipartFile multipartFile ){
+                       @RequestParam("pathImage") MultipartFile multipartFile, Model model ){
         String path = System.getProperty("user.home") + File.separator + "projectImages\\";
 
         try {
@@ -49,7 +54,6 @@ public class ProductController {
     @GetMapping("/products")
     public String seeAllProductsIntoAList(Model model){
         model.addAttribute("products",productService.findAll());
-        System.out.println(ProductController.class.getName() + " products line 52");
         return "/productView/products";
     }
 

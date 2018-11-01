@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.store.dao.ProductDAO;
+import ua.com.store.entity.Category;
 import ua.com.store.entity.Product;
 import ua.com.store.service.ProductService;
 
@@ -36,6 +37,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findOne(int id) {
         return dao.findOne(id);
+    }
+
+    @Override
+    public void addCategoryToProduct(Product product, Category category) {
+        product.setCategory(category);
+        dao.save(product);
     }
 
 

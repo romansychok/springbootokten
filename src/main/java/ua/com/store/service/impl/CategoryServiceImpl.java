@@ -37,8 +37,5 @@ public class CategoryServiceImpl implements CategoryService {
         return dao.findById(id).orElse(null);
     }
 
-    @Override
-    public Category findByCategoryName(String categoryName) {
-        return dao.findByCategoryName(categoryName);
-    }
+
 }

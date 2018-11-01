@@ -34,11 +34,12 @@ public class Orders {
 
 
 
+    public Orders(LocalDateTime localDateTime) {
+        this.localDateTime = localDateTime;
+    }
+
     public Orders(LocalDateTime localDateTime, int totalPrice) {
         this.localDateTime = localDateTime;
         this.totalPrice = totalPrice;
     }
-
-
-
 }
