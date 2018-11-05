@@ -26,6 +26,7 @@ public class ProductController {
     @GetMapping("/productAdmin")
     public String next(Model model){
         model.addAttribute("eProduct",new Product());
+        model.addAttribute("categories", categoryService.findAll());
         return "/adminView/productAdmin";
     }
 
@@ -47,13 +48,15 @@ public class ProductController {
             e.printStackTrace();
         }
         product.setPathImage("\\images\\" + multipartFile.getOriginalFilename());
+        model.addAttribute("categories",categoryService.findAll());
         productService.save(product);
         return "/mainView/index";
     }
 
     @GetMapping("/products")
     public String seeAllProductsIntoAList(Model model){
-        model.addAttribute("products",productService.findAll());
+        model.addAttribute("products", productService.findAll());
+        model.addAttribute("categories", categoryService.findAll());
         return "/productView/products";
     }
 
@@ -61,6 +64,7 @@ public class ProductController {
     public String goToTheProductPageToSeeDescriptionOfProduct(@PathVariable("id") int id, Model model){
         Product product = productService.findOne(id);
         model.addAttribute("product",product);
+//        model.addAttribute("categories",categoryService.findAll());
         return "/productView/productPage";
     }
 
@@ -73,6 +77,7 @@ public class ProductController {
     @GetMapping("/productEdit/{id}")
     public String productEdit(@PathVariable("id") int id, Model model){
         model.addAttribute("eProduct",productService.findOne(id));
+        model.addAttribute("categories",categoryService.findAll());
         return "/adminView/productAdmin";
     }
 

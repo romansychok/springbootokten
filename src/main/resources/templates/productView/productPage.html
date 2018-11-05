@@ -10,6 +10,9 @@
 <body>
 Product Page
 
-<p th:text="${product.productName}"></p>
+<p th:object="${eProduct}" th:text="${product.productName}"></p>
+<br/>
+<!--<p th:object="${eCategory}" th:text="${category.categoryOfProduct}"/>-->
+
 </body>
 </html>

@@ -25,7 +25,6 @@ body {
 }
 
 .footer {
-
     width: 100%;
     height: 60px;
     margin-top: 2877px;
@@ -68,9 +67,13 @@ body {
 }
 
 .access{
+    font-style: oblique;
     font-weight: bold;
-    background: yellow;
+    background: #333333;
     height: 50px;
+    color: #cccccc;
+    height: 116px;
+
 
 
 
@@ -79,6 +82,13 @@ body {
 .registrationAccess{
     margin-left: 950px;
     padding-right: 8px;
+    font-style: oblique;
+    font-weight: bold;
+    color: #cccccc;
+}
+
+.authorizationForm{
+    color: #cccccc;
 }
 
 .production_Page{
@@ -147,40 +157,42 @@ body {
 }
 
 .menu{
-    background-color: #28a4c9;
-    overflow: hidden;
-    margin-left: 47px;
-    margin-right: 47px;
-    margin-top: 25px;
+    list-style-type: none;
+    background-color: #232323;
+    height: 50px;
+    width: 740px;
+    margin-left: 555px;
+    margin-top: 17px;
+
+
 }
 
 .picture{
     margin-top: 30px;
-    width: 350px;
+    width: 960px;
+    height: 360px;
+    margin-left: 24px;
 }
 
 .menu a{
     float: left;
-    color: #f2f2f2;
     text-align: center;
     padding: 14px 31px;
     text-decoration: none;
     font-size: 14px;
+    color: whitesmoke;
+
 }
 
 .menu a:hover{
-    background-color: #23527c;
-    color: silver;
+    color: #737373;
 }
 
-.menu a.active{
-    background-color: blue;
-    color: white;
-}
+
 
 
 .boxIndex{
-    width: 1160px;
+    width: 1350px;
     height: 3055px;
     margin: 0 auto;
     text-align: center;

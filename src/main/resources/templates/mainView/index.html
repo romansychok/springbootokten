@@ -9,28 +9,37 @@
 <div th:class="boxIndex">
 <div>
     <div>
-    <div th:class="access">
-        <p th:class="contact">+380954202454</p>
-        <p th:class="contact2">romansychok@gmail.com</p>
-        <a th:class="registrationAccess" th:href="@{/register}">Registration</a>
-        <a th:href="@{/login}">Authorization</a>
+        <div th:class="access">
+            <p th:class="contact">+380954202454</p>
+            <p th:class="contact2">romansychok@gmail.com</p>
+            <a th:class="registrationAccess" th:href="@{/register}">Registration</a>
+            <a th:class="authorizationForm" th:href="@{/login}">Authorization</a>
+            <ul th:class="menu">
+                <li><a th:class="active" th:href="@{/products}">products</a></li>
+                <li><a th:href="@{/users}">users</a></li>
+                <li><a th:href="@{/categories}">categories</a></li>
+                <li><a th:href="@{/login}">login</a></li>
+                <li><a th:href="@{/categoryAdmin}">Category</a></li>
+                <li><a th:href="@{/productAdmin}">product</a></li>
+            </ul>
         </div>
     </div>
 
+        <img th:class="picture" th:src="@{picture/idea.jpg}" />
 
 
-        <img th:class="picture" th:src="@{picture/productsPicture.jpg}" />
 
 
+    <!--<div>-->
+        <!--<article>-->
+            <!--<figure>-->
+                <!--<strong>User review</strong>-->
+            <!--</figure>-->
+        <!--</article>-->
 
-    <div th:class="menu">
-    <a th:class="active" th:href="@{/products}">products</a>
-    <a th:href="@{/users}">users</a>
-    <a th:href="@{/categories}">categories</a>
-    <a th:href="@{/login}">login</a>
-    <a th:href="@{/categoryAdmin}">Category</a>
-    <a th:href="@{/productAdmin}">product</a>
-    </div>
+
+    <!--</div>-->
+
 
 
 </div>
