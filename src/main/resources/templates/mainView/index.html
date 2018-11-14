@@ -28,21 +28,35 @@
         <img th:class="picture" th:src="@{picture/idea.jpg}" />
 
 
-
-
     <!--<div>-->
-        <!--<article>-->
-            <!--<figure>-->
-                <!--<strong>User review</strong>-->
-            <!--</figure>-->
-        <!--</article>-->
-
-
+            <!--<th:block th:each="product:${products}">-->
+            <!--<a  th:class="production_Page" th:href="@{'product/'+${product.id}}"> <p th:text="${product.productName}"/></a>-->
+                <!--<img  th:class="productImage" th:src="${product.pathImage}"/>-->
+            <!--</th:block>-->
     <!--</div>-->
+
+
+
+    <div id="homepage">
+        <section id="services">
+        <article class="one_quarter">
+            <figure>
+                <img th:src="@{picture/FacebookGIF.png}" width="32" height="32" >
+            </figure>
+            <strong>FaceBookStore</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nunc non diam erat. In fringilla massa ut nisi ullamcorper.</p>
+            <p class="more">
+                <a th:href="@{#}">Read More</a>
+            </p>
+        </article>
+        </section>
+    </div>
 
 
 
 </div>
 <div th:replace="layouts/footer::footer"/>
+</div>
 </body>
 </html>

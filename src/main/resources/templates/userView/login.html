@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layouts/header::header">
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
 Login
 
-<form th:action="@{/login}" method="post">
-    <input type="text" name="username" placeholder="username"/>
-    <input type="text" name="password" placeholder="password"/>
-    <input type="submit" value="sign in"/>
-</form>
+    <div class="login">
+        <form th:action="@{/login}" method="post">
+        <input class="usernameLogin" type="text" name="username" placeholder="username"/>
+            <br/>
+        <input class="password" type="text" name="password" placeholder="password"/>
+            <br/>
+        <input class="buttonSign" type="submit" value="sign in"/>
+        </form>
+    </div>
 
+<div th:replace="layouts/footer::footer"/>
 </body>
 </html>
