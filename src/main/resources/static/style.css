@@ -4,6 +4,7 @@ html {
 }
 body {
     margin-bottom: 60px;
+
 }
 
 .header{
@@ -235,28 +236,44 @@ body {
 #homepage{
     width: 960px;
     height: 434px ;
-    /*display: block;*/
+    margin-left: 222px;
     line-height: 1.6em;
 
 }
 
 #services{
-    padding: 0 0 30px 0;
-    border-bottom: 1px solid #DEDEDE;
+    width: 1110px;
+    padding: 0 0px 150px 0;
+
+
 }
 
 .one_quarter{
-    width: 225px;
+    width: 266px;
     height: 142px;
     /*margin-left: 203px;*/
     /*margin-right: 20px;*/
     display: block;
-    margin: 0 20px 0 0;
     /*float: left;*/
+    font-family: Georgia;
+    float: left;
 }
 
-.clear{
-    clear: both;
+.second_quarter{
+    width: 266px;
+    height: 142px;
+    display: block;
+    margin-left: 60px;
+    font-family: Georgia;
+    float: left;
+}
+
+.more{
+    margin-left: 196px;
+}
+
+.hrDifference{
+    border-bottom: 1px solid #DEDEDE;
 }
 
 figure{
@@ -267,4 +284,14 @@ figure{
 
 p{
     padding: 5px 0 0 0;
+}
+
+#sociaty{
+    text-transform: uppercase;
+    font-size: 14px;
+
+}
+
+.socialText{
+    float: left;
 }
