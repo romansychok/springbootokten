@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layouts/header::header">
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesForLogin.css}">
 </head>
 <body>
-Login
 
-    <div class="login">
+<div class="container">
+
+    <div id="login">
+
         <form th:action="@{/login}" method="post">
-        <input class="usernameLogin" type="text" name="username" placeholder="username"/>
-            <br/>
-        <input class="password" type="text" name="password" placeholder="password"/>
-            <br/>
-        <input class="buttonSign" type="submit" value="sign in"/>
-        </form>
-    </div>
 
-<div th:replace="layouts/footer::footer"/>
+            <fieldset class="clearfix">
+
+                <p><span class="fontawesome-user"></span><input type="text" name="username"  onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                <p><span class="fontawesome-lock"></span><input type="text" name="password"  onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                <p><input type="submit" value="Sign In"></p>
+
+            </fieldset>
+
+        </form>
+
+        <p>Not a member? <a th:href="@{/register}">Sign up now</a><span class="fontawesome-arrow-right"></span></p>
+
+    </div> <!-- end login -->
+
+</div>
+
+</body>
+
+
 </body>
 </html>

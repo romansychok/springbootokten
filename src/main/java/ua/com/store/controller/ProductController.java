@@ -53,6 +53,13 @@ public class ProductController {
         return "/mainView/index";
     }
 
+//    @GetMapping("/products")
+//    public String showCurrentProductInMainPage(Model model){
+//        model.addAttribute("products", productService.findAll());
+//        return "/mainView/index";
+//    }
+
+
     @GetMapping("/products")
     public String seeAllProductsIntoAList(Model model){
         model.addAttribute("products", productService.findAll());
