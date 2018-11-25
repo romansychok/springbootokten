@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Product {
+public class Product extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,23 +36,24 @@ public class Product {
     private Set<User> users = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(name = "ProductOrder" , joinColumns = @JoinColumn(name = "ProductID"))
+    @JoinTable(name = "ProductOrder" , joinColumns = @JoinColumn(name = "ProductID"), inverseJoinColumns = @JoinColumn(name = "OrderID"))
     private Set<Orders> orders = new HashSet<>();
 
     @ManyToMany
+    @JoinTable(name = "BrandProduct", joinColumns = @JoinColumn(name = "ProductID"), inverseJoinColumns = @JoinColumn(name = "BrandID") )
     private Set<Brand> brands = new HashSet<>();
 
-    public Product(String productName, String nameOfBrand, String description, int price, int quantity, String pathImage) {
+
+    public Product(String productName, String nameOfBrand, String description, int price, int quantity, Category category) {
         this.productName = productName;
         this.nameOfBrand = nameOfBrand;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
-        this.pathImage = pathImage;
+        this.category = category;
     }
 
-    public Product(String productName, String nameOfBrand, String description,
-                   int price, int quantity, String pathImage, Category category) {
+    public Product(String productName, String nameOfBrand, String description, int price, int quantity, String pathImage, Category category) {
         this.productName = productName;
         this.nameOfBrand = nameOfBrand;
         this.description = description;
@@ -62,9 +63,6 @@ public class Product {
         this.category = category;
     }
 
-    public Product(String brand, String details, int price, int quantity, String pathImage) {
-        super();
-    }
 
 
 

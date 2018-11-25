@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layouts/header::header">
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
@@ -10,5 +10,6 @@ Admin
 
 <a th:href="@{/logout}">logout</a>
 
+<div th:replace="layouts/footer::footer"/>
 </body>
 </html>

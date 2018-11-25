@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import ua.com.store.entity.Category;
 import ua.com.store.entity.Product;
 import ua.com.store.service.CategoryService;
 import ua.com.store.service.OrdersService;
@@ -71,7 +73,7 @@ public class ProductController {
     public String goToTheProductPageToSeeDescriptionOfProduct(@PathVariable("id") int id, Model model){
         Product product = productService.findOne(id);
         model.addAttribute("product",product);
-//        model.addAttribute("categories",categoryService.findAll());
+        model.addAttribute("categories",categoryService.findAll());
         return "/productView/productPage";
     }
 
@@ -87,6 +89,7 @@ public class ProductController {
         model.addAttribute("categories",categoryService.findAll());
         return "/adminView/productAdmin";
     }
+
 
 
 }

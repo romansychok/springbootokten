@@ -10,5 +10,8 @@ public interface CategoryDAO extends JpaRepository<Category, Integer> {
     @Query("from Category c where c.categoryOfProduct=:name")
     Category findByCategoryName(@Param("name") String name);
 
+    @Query("select c from Category c left join c.products where c.id=:id")
+    Category findCategoryWithProduct(@Param("id") int id);
+
 
 }

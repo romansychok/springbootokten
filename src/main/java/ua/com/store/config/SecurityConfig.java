@@ -18,6 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan("ua.com.store.*")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -28,13 +29,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.userDetailsService();
     }
 
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
-
 
 
     @Bean
@@ -46,26 +44,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    private InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder> inMemoryConfigure(){
-            return new InMemoryUserDetailsManagerConfigurer<>();
-    }
 
+    private InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder> inMemoryConfigure(){
+        return new InMemoryUserDetailsManagerConfigurer<>();
+    }
 
     @Autowired
     public void globalConfigure(AuthenticationManagerBuilder builder, AuthenticationProvider provider) throws Exception {
-//        builder.inMemoryAuthentication()
-//                .withUser("aa").password("{noop}aa").roles("ADMIN");
+
         inMemoryConfigure()
-                .withUser("aa")
-                .password("{noop}aa")
-                .authorities("ADMIN")
-                .and()
-                .withUser("user")
-                .password("{noop}password")
-                .authorities("USER")
+                .withUser("admin")
+                .password("{noop}admin")
+                .roles("ADMIN")
                 .and()
                 .configure(builder);
+
         builder.authenticationProvider(provider);
+
 
     }
 
@@ -75,13 +70,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .and()
-                .formLogin().loginPage("/login").permitAll()
+                .and().formLogin().loginPage("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .and()
-                .csrf();
+                .and().csrf();
     }
+
 
 
 

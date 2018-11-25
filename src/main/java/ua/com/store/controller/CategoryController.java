@@ -60,6 +60,12 @@ public class CategoryController {
         return "/adminView/categoryAdmin";
     }
 
+    @GetMapping("/categories")
+    public String showAllCategories(Model model){
+        model.addAttribute("categories",categoryService.findAll());
+        return "/categoryView/categories";
+    }
+
 
     @InitBinder
     public void bind(WebDataBinder binder){

@@ -6,9 +6,11 @@
 </head>
 <body>
 
-<th:block th:each="category:${categories}">
-    <a th:href="@{'category/'+${category.id}}"> <p th:text="${category.categoryOfProduct}"/></a>
+<th:block th:each="brand:${brands}">
+    <a th:href="@{'brand/'+${brand.id}}"><p th:text="${brand.nameOfBrand}"></p></a>
+    <img th:src="${brand.brandImage}"/>
     <br/>
 </th:block>
+
 </body>
 </html>

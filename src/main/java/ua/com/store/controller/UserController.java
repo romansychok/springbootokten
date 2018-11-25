@@ -4,15 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ua.com.store.entity.User;
 import ua.com.store.service.ProductService;
 import ua.com.store.service.UserService;
+import ua.com.store.validation.UserValidator;
 
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
+import java.security.Principal;
 import java.util.Optional;
 
 @Controller
@@ -23,6 +26,9 @@ public class UserController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private UserValidator userValidator;
 
     @GetMapping("/")
     public String index(){
@@ -89,6 +95,9 @@ public class UserController {
         model.addAttribute("user",one);
         return "userView/user";
     }
-
+    @InitBinder
+    public void bind(WebDataBinder binder){
+        binder.addValidators(userValidator);
+    }
 
 }

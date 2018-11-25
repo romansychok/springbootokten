@@ -39,7 +39,6 @@ public class User implements UserDetails {
 
 
 
-
     @Enumerated(EnumType.STRING)
     private Authority authority = Authority.ROLE_USER;
 
