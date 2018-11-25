@@ -6,9 +6,15 @@
 </head>
 <body>
 
-<form th:action="@{/saveBrand}" th:method="post" th:object="${eBrand}" enctype="multipart/form-data">
+Brand Admin
+
+<form th:action="@{/saveBrand}" th:object="${eBrand}" method="post"  enctype="multipart/form-data">
     <input type="hidden" th:fields="*{id}"/>
-    <input type="text" th:fields="*{nameOfBrand}" placeholder="nameOfBrand"/>
+    <input type="text" th:field="*{nameOfBrand}" placeholder="nameOfBrand"/>
+    <select>
+        <option th:each="country:${countries}">
+            <p th:text="${country.countryName}"/></option>
+    </select>
     <input type="file" name="brandImage"/>
     <input type="submit" value="save"/>
 

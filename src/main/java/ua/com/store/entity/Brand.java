@@ -40,4 +40,10 @@ public class Brand extends AbstractEntity {
         this.nameOfBrand = nameOfBrand;
         this.brandImage = brandImage;
     }
+
+    public Brand(String nameOfBrand, String brandImage, Country country) {
+        this.nameOfBrand = nameOfBrand;
+        this.brandImage = brandImage;
+        this.country = country;
+    }
 }

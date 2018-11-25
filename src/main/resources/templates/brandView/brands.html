@@ -6,8 +6,11 @@
 </head>
 <body>
 
+Brands
+
 <th:block th:each="brand:${brands}">
-    <a th:href="@{'brand/'+${brand.id}}"><p th:text="${brand.nameOfBrand}"></p></a>
+    <a th:href="@{'brand/'+${brand.id}}"> <p th:text="${brand.nameOfBrand}"/></a>
+
     <img th:src="${brand.brandImage}"/>
     <br/>
 </th:block>

@@ -30,11 +30,11 @@ public class CountryController {
 
     }
 
-//    @GetMapping("/countries")
-//    public String seeAllCountries(Model model){
-//        model.addAttribute("countries",countryService.findAll());
-//        return "/countryView/countries";
-//    }
+    @GetMapping("/countries")
+    public String seeAllCountries(Model model){
+        model.addAttribute("countries",countryService.findAll());
+        return "/countryView/countries";
+    }
 
     @GetMapping("/country/{id}")
     public String pageWhereCanSeeCountryOfOriginProduct(@PathVariable("id") int id, Model model){

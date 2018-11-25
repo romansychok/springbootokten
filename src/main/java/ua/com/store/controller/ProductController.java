@@ -32,6 +32,11 @@ public class ProductController {
         return "/adminView/productAdmin";
     }
 
+    @GetMapping("/productsIndex")
+    public String showProductsOnIndexPage(Model model){
+        model.addAttribute("productsIndex",productService.findAll());
+        return "/mainView/index";
+    }
 
     @GetMapping("/productPage")
     public String productPage(){

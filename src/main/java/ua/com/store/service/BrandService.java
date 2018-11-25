@@ -12,7 +12,6 @@ public interface BrandService {
     void save(Brand brand);
     void delete(Brand brand);
     List<Brand> findAll();
-
    Brand findOne(int id);
 
 

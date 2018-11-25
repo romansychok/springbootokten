@@ -78,10 +78,13 @@
         </section>
         <hr class="hrDifference"/>
 
+        ////////////////////////
         <section id="mainImages">
-            <th:block th:each="product:${products}" >
-                <a th:href="@{'product/'+${product.id}}"><p th:text="${product.productName}"/></a>
+            <th:block th:each="product:${productsIndex}" >
+                <a  th:class="production_Page" th:href="@{'product/'+${product.id}}"> <p th:text="${product.productName}"/></a>
+                <img  th:class="productImage" th:src="${product.pathImage}"/>
 
+                <br/>
             </th:block>
 
         </section>
