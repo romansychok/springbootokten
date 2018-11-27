@@ -31,7 +31,8 @@ public class UserController {
     private UserValidator userValidator;
 
     @GetMapping("/")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("productsIndex",productService.findAll());
         return "/mainView/index";
     }
 
